@@ -29,12 +29,12 @@ fun main(args: Array<String>) {
         println("No files found")
     } else {
         println("Total files : ${files.size}")
-        createCSV(files)
+        createCSV(exts, files)
     }
 }
 
-fun createCSV(files: MutableList<File>) {
-    val csvFile = File("stats_${Date()}.csv")
+fun createCSV(exts: List<String>, files: MutableList<File>) {
+    val csvFile = File("stats_${exts}_${Date()}.csv")
     if (csvFile.createNewFile()) {
         val bufferedWriter = BufferedWriter(FileWriter(csvFile))
 
