@@ -40,11 +40,14 @@ fun createCSV(exts: List<String>, files: MutableList<File>) {
 
         // Adding heading
         bufferedWriter.write("File Name, No. of Lines\n")
-
+        var totalLines = 0
         for (file in files) {
             val lineCount = getLineCount(file)
+            totalLines += lineCount
             bufferedWriter.write("${file.name},$lineCount\n")
         }
+
+        bufferedWriter.write("Total Lines, $totalLines\n")
 
         bufferedWriter.flush()
         bufferedWriter.close()
