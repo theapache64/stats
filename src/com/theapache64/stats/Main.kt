@@ -24,9 +24,13 @@ fun main(args: Array<String>) {
     val files = mutableListOf<File>()
     getFiles(currentDir, exts, files)
 
-    println("Total files : ${files.size}")
 
-    createCSV(files)
+    if (files.isEmpty()) {
+        println("No files found")
+    } else {
+        println("Total files : ${files.size}")
+        createCSV(files)
+    }
 }
 
 fun createCSV(files: MutableList<File>) {
