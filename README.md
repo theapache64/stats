@@ -17,6 +17,18 @@ function stats(){
 
 Execute `stats` from your project along with the extension you want to manage
 
-```sh
+```console
+~/projects/my-project$ stats java
+```
+
+You'll get something like this
 
 ```
+Project : my-project
+Extension to be managed : [.java]
+Total files : 27
+CSV Created
+```
+
+Done! You've successfully created your first stats file. Check your project directory, and you'll be able to find 
+a file named `stats_*.csv`
